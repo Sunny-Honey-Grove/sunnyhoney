@@ -5,23 +5,69 @@ const form = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
 const year = document.querySelector("#year");
 const revealNodes = document.querySelectorAll(".reveal");
-const parallaxNode = document.querySelector("[data-parallax]");
 
 if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
 if (menuToggle && siteNav) {
+  const desktopMediaQuery = window.matchMedia("(min-width: 821px)");
+
+  const closeMenu = () => {
+    siteNav.classList.remove("open");
+    menuToggle.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  };
+
+  const openMenu = () => {
+    siteNav.classList.add("open");
+    menuToggle.classList.add("is-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+  };
+
   menuToggle.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    if (siteNav.classList.contains("open")) {
+      closeMenu();
+      return;
+    }
+
+    openMenu();
   });
 
   navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      siteNav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-    });
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+
+    if (
+      !(target instanceof Node) ||
+      siteNav.contains(target) ||
+      menuToggle.contains(target)
+    ) {
+      return;
+    }
+
+    closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+
+  desktopMediaQuery.addEventListener("change", (event) => {
+    if (event.matches) {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 820) {
+      closeMenu();
+    }
   });
 }
 
@@ -44,18 +90,6 @@ if ("IntersectionObserver" in window) {
   revealNodes.forEach((node) => observer.observe(node));
 } else {
   revealNodes.forEach((node) => node.classList.add("is-visible"));
-}
-
-if (parallaxNode && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const updateParallax = () => {
-    const rect = parallaxNode.getBoundingClientRect();
-    const shift = (window.innerHeight - rect.top) * 0.02;
-    parallaxNode.style.transform = `translateY(${Math.max(-4, Math.min(18, shift))}px)`;
-  };
-
-  updateParallax();
-  window.addEventListener("scroll", updateParallax, { passive: true });
-  window.addEventListener("resize", updateParallax);
 }
 
 if (form && formStatus) {

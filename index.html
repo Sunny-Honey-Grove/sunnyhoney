@@ -35,25 +35,41 @@
 
     <header class="site-header">
       <div class="header-shell">
-        <a class="brandmark" href="#top" aria-label="Sunny Honey Grove home">
-          <span class="brandmark-name">Sunny Honey Grove</span>
-        </a>
-
         <button
           class="menu-toggle"
           type="button"
           aria-expanded="false"
           aria-controls="site-nav"
         >
-          Menu
+          <span class="sr-only">Toggle navigation</span>
+          <span class="menu-toggle-lines" aria-hidden="true"></span>
         </button>
 
+        <a class="brandmark" href="#top" aria-label="Sunny Honey Grove home">
+          <span class="brandmark-overline">Sunny Honey</span>
+          <span class="brandmark-name">Grove</span>
+        </a>
+
         <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-          <a href="#portfolio">Portfolio</a>
-          <a href="#story">How We Build</a>
-          <a href="#enterprise">Enterprise</a>
-          <a href="#contact" class="nav-cta">Partner With Us</a>
+          <ul class="site-nav-list">
+            <li class="nav-item nav-item-has-submenu">
+              <a href="#portfolio">Brands</a>
+              <ul class="submenu">
+                <li><a href="#honey-shave-ice">Honey Shave Ice</a></li>
+                <li><a href="#honeyd-dates">Honey'd Dates</a></li>
+                <li><a href="#reserve-honey-goods">Reserve Goods</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#story">How We Build</a></li>
+            <li class="nav-item"><a href="#enterprise">Enterprise</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
+          </ul>
         </nav>
+
+        <a class="nav-utility" href="#contact" aria-label="Request the brand deck">
+          <span class="nav-utility-badge">GO</span>
+          <span class="nav-utility-label">Deck</span>
+        </a>
       </div>
     </header>
 
@@ -87,31 +103,6 @@
               <li>Investor, procurement, and press inquiries</li>
             </ul>
           </div>
-
-          <div class="hero-visual reveal" data-reveal="scale" data-parallax>
-            <figure class="hero-portrait">
-              <img
-                src="https://images.unsplash.com/photo-1768204042188-f5a337e61ca5?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1600"
-                alt="Strawberry shave ice topped with whipped cream and fresh strawberries."
-              />
-              <figcaption>Honey Shave Ice</figcaption>
-            </figure>
-
-            <figure class="hero-orb hero-orb-dates">
-              <img
-                src="https://images.unsplash.com/photo-1648288725055-5ba4063355b9?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200"
-                alt="Premium dates styled in a wooden bowl on soft dark fabric."
-              />
-              <figcaption>Honey'd Dates</figcaption>
-            </figure>
-
-            <figure class="hero-orb hero-orb-comb">
-              <img
-                src="https://images.unsplash.com/photo-1642067958050-bfba120a57e2?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200"
-                alt="Honeycomb cells filled with golden honey."
-              />
-            </figure>
-          </div>
         </div>
       </section>
 
@@ -144,7 +135,11 @@
           </div>
 
           <div class="portfolio-list">
-            <article class="portfolio-row reveal" data-reveal="up">
+            <article
+              class="portfolio-row reveal"
+              id="honey-shave-ice"
+              data-reveal="up"
+            >
               <div class="portfolio-media">
                 <img
                   src="https://images.unsplash.com/photo-1768204042188-f5a337e61ca5?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400"
@@ -168,7 +163,11 @@
               </div>
             </article>
 
-            <article class="portfolio-row portfolio-row-reverse reveal" data-reveal="up">
+            <article
+              class="portfolio-row portfolio-row-reverse reveal"
+              id="honeyd-dates"
+              data-reveal="up"
+            >
               <div class="portfolio-media">
                 <img
                   src="https://images.unsplash.com/photo-1648288725055-5ba4063355b9?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400"
@@ -192,7 +191,11 @@
               </div>
             </article>
 
-            <article class="portfolio-row reveal" data-reveal="up">
+            <article
+              class="portfolio-row reveal"
+              id="reserve-honey-goods"
+              data-reveal="up"
+            >
               <div class="portfolio-media">
                 <img
                   src="https://images.unsplash.com/photo-1642067958050-bfba120a57e2?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1400"
