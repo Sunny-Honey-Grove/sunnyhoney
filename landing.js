@@ -105,7 +105,7 @@ if (newsletterForm && formStatus) {
       ].join("\n")
     );
 
-    window.location.href = `mailto:hello@sunnyhoneygrove.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@sunnyhoneygrove.com?subject=${subject}&body=${body}`;
     formStatus.textContent = "Your email draft is ready to send.";
     newsletterForm.reset();
   });

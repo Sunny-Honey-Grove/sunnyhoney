@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <path
-    d="M32 7.5 49.75 17.75v28.5L32 56.5 14.25 46.25v-28.5L32 7.5Z"
+    d="M54 32 43 51.05H21L10 32 21 12.95H43L54 32Z"
     fill="#DFA227"
   />
 </svg>
