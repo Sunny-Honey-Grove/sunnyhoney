@@ -602,9 +602,18 @@ input {
   margin-top: 2rem;
 }
 
-.social-links a {
+.social-links a,
+.social-note {
   font-size: 0.6rem;
   font-weight: 700;
+}
+
+.social-note {
+  margin: 0;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 0.76rem;
+  line-height: 1.35;
+  color: #efcf74;
 }
 
 .site-footer {
@@ -853,17 +862,19 @@ input {
   }
 
   .hero-inner {
-    width: min(46rem, calc(100vw - 3rem));
-    min-height: 0;
+    width: calc(100vw - 2rem);
+    min-height: inherit;
   }
 
   .hero h1 {
-    position: static;
-    width: auto;
-    margin-top: 1rem;
-    font-size: clamp(1rem, 3.8vw, 1.5rem);
+    position: absolute;
+    right: 1rem;
+    bottom: 2rem;
+    width: min(16rem, 64vw);
+    margin: 0;
+    font-size: clamp(1.22rem, 4.8vw, 1.7rem);
     letter-spacing: 0;
-    text-align: center;
+    text-align: right;
   }
 
   .section-title,
